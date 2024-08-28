@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://bookOrderEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="bookOrderDc"
+                  class="com.company.library.entity.BookOrder"/>
+        <collection id="bookDc" class="com.company.library.entity.Book">
+            <fetchPlan extends="_base"/>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="editActions">
+        <form id="form" dataContainer="bookOrderDc">
+            <column width="350px">
+                <entityPicker id="libraryField" property="library">
+                </entityPicker>
+                <entityPicker id="readerField" property="reader">
+                </entityPicker>
+                <dateField id="issuanceDateField" property="issuanceDate"/>
+                <dateField id="returnDateField" property="returnDate"/>
+            </column>
+        </form>
+        <dataGrid id="booksDataGrid"
+                  width="100%"
+                  metaClass="Book"
+                  selectionMode="MULTI_CHECK">
+            <columns>
+                <column id="title" property="title"/>
+                <column id="author" property="author"/>
+            </columns>
+        </dataGrid>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

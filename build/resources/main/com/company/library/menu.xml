@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://com.company.library/menu.application" insertBefore="administration">
+        <item screen="User.browse" caption="msg://com.company.library.screen.user/UserBrowse.caption"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+        <item screen="Book.browse" caption="msg://com.company.library.screen.book/bookBrowse.menu"/>
+        <item screen="Category.browse" caption="Categories"/>
+        <item screen="Form_.browse" caption="msg://com.company.library.screen.form/formBrowse.menu"/>
+        <item screen="Reader.browse" caption="msg://com.company.library.screen.reader/readerBrowse.menu"/>
+        <item screen="Worker.browse" caption="msg://com.company.library.screen.worker/workerBrowse.menu"/>
+        <item screen="Library.browse" caption="msg://com.company.library.screen.library/libraryBrowse.menu"/>
+        <item screen="BookOrder.browse" caption="msg://com.company.library.entity.bookorder/bookOrderBrowse.menu"/>
+    </menu>
+
+</menu-config>
